@@ -6,28 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman</title>
-    <script src="/assets/javascript/game.js"></script>
+    
 </head>
 
 <body>
     <h1>Tom's Hang Man Game</h1>
     <div>
-        <h2>Wins</h2>
+        <h3>Wins</h3>
         <br>
         <!-- placeholder for number of wins -->
     </div>
-    <div><h2>Losses</h2>
+    <div><h3>Losses</h3>
     <!-- placeholder for number of losses -->
     </div>
-    <div><h2>Current word</h2>
-    <!-- current word spaces -->
+    <div><h3>Current word</h3>
+    <span id=""></span>
     </div>
-    <div><h2>Guesses remaining</h2>
-    <!-- guesses remaining -->
+    <div><h3>Guesses remaining</h3>
+    <p id="guess-remain"></p>
     </div>
-    <div><h2>Letters already guessed</h2>
+    <div><h3>Letters already guessed</h3>
+        <p id="guessed"></p>
     <!-- letters already guessed -->
     </div>
+
+    <script src="/assets/javascript/game.js"></script>
 </body>
 
 </html>
