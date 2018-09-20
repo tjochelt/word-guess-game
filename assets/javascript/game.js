@@ -1,14 +1,30 @@
 //create html shell which includes title, instructions, and other sub sections
 //create list of possibile words to be drawn from
 
-var hawkIcons = ["kinnick", "long", "banks", "greene"];
+var hawkIcons = ["kinnick", "long", "banks", "greene", "duncan", "shaw", "tate", "sanders", "gallery"];
+
+
+// pick random word out of icons list
+var wordPick = hawkIcons[Math.floor(Math.random() * hawkIcons.length)];
+// console.log(wordPick)
 
 //logic to add a number of underlines which corresponds to the number of letters in a word
-var chosenWord = hawkIcons[0];
-for (i = 0; i < hawkIcons.length; i++) {
-  console.log(hawkIcons[i]);
+
+
+// var underlineSpan = document.getElementById("spaces");
+var underlineWord = "";
+
+// asterisksSpan.textContent
+// asterisksSpan.innerHTML
+// asterisksSpan.innerText
+
+
+for (i = 0; i < wordPick.length; i++) {
+  underlineWord += "_ ";
 }
-// console.log(chosenWord)
+
+document.getElementById("spaces").innerHTML = underlineWord + "_ ";
+
 
 //determine if guess is in chosenWord
 
@@ -38,15 +54,15 @@ var rightGuess = "";
 // }
 //   });
 // Let's start by grabbing a reference to the <span> below.
-var userGuess = document.getElementById("guessed");
-document.onkeyup = function(event) {
-  userGuess.textContent = event.key;
-  ("guessed").append(" " + event.key) 
-};
+
+// document.onkeyup = function(){myScript};
+  // userGuess.textContent = event.key;
+  // ("guessed").append(" " + event.key) 
+
 
 
 
 //if number of guesses remaining = 0, display "Game over"
 //if word complete, display "You Win!" or something fancier if i have time
 
-var wins;
+// var wins;
