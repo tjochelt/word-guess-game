@@ -14,7 +14,7 @@ var hawkIcons = [
 
 // pick random word out of icons list
 var wordPick = hawkIcons[Math.floor(Math.random() * hawkIcons.length)];
-// console.log(wordPick)
+console.log(wordPick)
 
 //adds underscores for picked word
 var underlineWord = "";
@@ -27,7 +27,8 @@ document.getElementById("spaces").innerHTML = underlineWord + "_ ";
 //prints the letter you type to the page
 document.onkeyup = function(event) {
   var userInput = event.key;
-  document.getElementById("guessed").innerHTML = userInput;
+if (wordPick.indexOf(userInput) < 0 )  
+document.getElementById("guessed").innerHTML = userInput;
 }
 // function showLetter() {
 //   document.getElementById("guessed").innerHTML = onkeyup.char;
