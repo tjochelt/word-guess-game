@@ -18,24 +18,45 @@ console.log(wordPick);
 
 //adds underscores for picked word
 var underlineWord = "";
-
 for (i = 0; i < wordPick.length; i++) {
   underlineWord += "_ ";
-}
+
 document.getElementById("spaces").innerHTML = underlineWord + "_ ";
-console.log(underlineWord)
+console.log(underlineWord);
+} 
+
+//splits the chosen word apart
+var indLetters = wordPick.split("");
+console.log(indLetters)
+
+for (i = 0; i < wordPick.length; i++) {
+  
+  console.log(indLetters)
+  
+}
 
 //prints the letter you type to the page
 document.onkeyup = function(event) {
   var userInput = event.key;
-  if (wordPick.indexOf(userInput) < 0) {
-    document.getElementById("guessed").innerHTML = userInput;
-    console.log(wordPick.indexOf(userInput));
-  } else {
-    document.getElementById("spaces").innerHTML = underlineWord[indexOf(userInput)] === userInput;
+  for (var i = 0;i < indLetters.length; i++) {
+    if (userInput === indLetters[i].toUpperCase()) {
+      indLetters[i] = wordPick[i];
+    } else (userInput != indLetters[i].toUpperCase()) {
+      document.getElementById("guessed").innerHTML = userInput;  
+    }
   }
+}
+  // if (wordPick.indexOf(userInput) < 0) {
+  //   document.getElementById("guessed").innerHTML = userInput;
+  // } else {
+  //   // document.getElementById("spaces").innerHTML = underlineWord[indexOf(userInput)] === userInput;
+  //   document.getElementById("spaces");
+  // }
+  // var res = str.replace(/blue/g, "red");
+  // document.getElementById("demo").innerHTML = res;
+
   // document.getElementById("spaces").innerHTML = userInput)
-};
+// };
 
 // function showLetter() {
 //   document.getElementById("guessed").innerHTML = onkeyup.char;
