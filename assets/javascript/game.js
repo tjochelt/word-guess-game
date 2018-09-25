@@ -43,26 +43,31 @@ console.log(wordPick);
 var underlineWord = "";
 for (i = 0; i < wordPick.length; i++) {
   underlineWord += "_ ";
-// document.getElementById("spaces").innerHTML = underlineWord + "_ ";
-// console.log(underlineWord);
+document.getElementById("spaces").innerHTML = underlineWord;
+console.log("tom ",underlineWord);
 } 
 
 //splits the chosen word apart
 var indLetters = wordPick.split("");
 console.log(indLetters)
 
-for (i = 0; i < wordPick.length; i++) {
-  
-  console.log(indLetters)
-  
-}
+
 
 //prints the letter you type to the page
 document.onkeyup = function(event) {
   var userInput = event.key;
   for (var i = 0;i < indLetters.length; i++) {
-    if (userInput === indLetters[i].toUpperCase()) {
-      indLetters[i] = wordPick[i];
+    // console.log("user input", userInput)
+    // console.log("ind letters", indLetters[i])
+
+    if (userInput === indLetters[i]) {
+     var indexPosition = indLetters.indexOf(userInput);
+      underlineWord[indexPosition] = userInput;
+      // document.getElementById("spaces").innerHTML =
+     console.log(underlineWord)
+    //  console.log(indLetters.indexOf(userInput))
+    //  indexOf(ind) indLetters[i] 
+      console.log("same letter")
     } else (userInput != indLetters[i].toUpperCase()) 
       document.getElementById("guessed").innerHTML = userInput;  
     }
